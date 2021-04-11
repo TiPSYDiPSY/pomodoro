@@ -8,11 +8,14 @@ Pomodoro-Tracker a time management tool.
 
 ## Usage
 
-//TO-DO
+Install dependencies and run.
 
 
 ## Visual
-//TO-DO
+![image](https://user-images.githubusercontent.com/30836373/114313008-6d888900-9afd-11eb-8057-96e56a5ce997.png)
+![image](https://user-images.githubusercontent.com/30836373/114313018-76795a80-9afd-11eb-8fef-41cf5e556f75.png)
+![image](https://user-images.githubusercontent.com/30836373/114313092-cd7f2f80-9afd-11eb-8d92-6044f4afdd8a.png)
+![image](https://user-images.githubusercontent.com/30836373/114313549-99a50980-9aff-11eb-9dfc-79a2e6ea5b9e.png)
 
 
 ## License
