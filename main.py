@@ -1,6 +1,8 @@
 from tkinter import *
 from tkinter.ttk import *
+from playsound import playsound
 import math
+import threading
 
 # ---------------------------- CONSTANTS ------------------------------- #
 PINK = "#e2979c"
@@ -8,9 +10,9 @@ RED = "#e7305b"
 GREEN = "#9bdeac"
 YELLOW = "#f7f5dd"
 FONT_NAME = "Courier"
-WORK_MIN = 1  # 25
-SHORT_BREAK_MIN = 2  # 5
-LONG_BREAK_MIN = 3  # 20
+WORK_MIN = 25
+SHORT_BREAK_MIN = 5
+LONG_BREAK_MIN = 20
 REPS = 0
 timer = None
 
@@ -34,10 +36,12 @@ def start_timer():
     long_break_sec = LONG_BREAK_MIN * 60
 
     if REPS % 8 == 0:
+        threading.Thread(target=alarm).start()
         pop_up()
         text.config(text="Break", foreground=RED)
         count_down(long_break_sec)
     elif REPS % 2 == 0:
+        threading.Thread(target=alarm).start()
         pop_up()
         text.config(text="Break", foreground=PINK)
         count_down(short_break_sec)
@@ -65,6 +69,12 @@ def count_down(count):
     else:
         start_timer()
         check.config(text="✓" * math.floor(REPS / 2))
+
+
+# ---------------------------- POP UP --------------------------------- #
+
+def alarm():
+    playsound('alarm.wav')
 
 
 # ---------------------------- POP UP --------------------------------- #
